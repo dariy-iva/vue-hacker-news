@@ -1,16 +1,71 @@
 <template>
   <div id="app">
-    <router-view/>
+    <Header />
+    <router-view />
   </div>
 </template>
 
+<script>
+
+import Header from "./components/Header.vue"
+
+export default {
+  name: 'app',
+  components: {
+    Header
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/Verdana/verdana.css);
+
+@keyframes loading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#app {
+  font-family: "Verdana", Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  width: 100%;
+  min-width: 320px;
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  --black: #000;
+  --white: #fff;
+  --gray: #828282;
+  --color-bcg-gray: rgb(246, 246, 239);
+  --color-bcg-orange: rgb(255, 102, 0);
+  background-color: var(--color-bcg-gray);
+}
+
+.link-hover {
+  transition: opacity 0.3s;
+}
+
+.link-hover:hover {
+  opacity: 0.6;
+}
 </style>
