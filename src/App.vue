@@ -1,20 +1,43 @@
 <template>
   <div id="app">
     <Header />
+    <Article
+      :article="article"
+      :onArticleClick="''"
+      :commentsIsOpen="''"
+      :onCommentsButtonClick="''"
+      :isMainPage="isMainPage"
+    />
     <router-view />
   </div>
 </template>
 
 <script>
-
-import Header from "./components/Header.vue"
+import Header from "./components/Header.vue";
+import Article from "./components/Artical.vue";
 
 export default {
-  name: 'app',
+  name: "app",
+  data() {
+    return {
+      article: {
+        id: 1,
+        title: "Article 1",
+        text: "Article text",
+        url: "Article url",
+        score: 5,
+        by: "Me",
+        time: 112263,
+        kids: [],
+      },
+      isMainPage: true,
+    };
+  },
   components: {
-    Header
-  }
-}
+    Header,
+    Article,
+  },
+};
 </script>
 
 <style>
