@@ -1,41 +1,53 @@
 <template>
   <div id="app">
     <Header />
-    <Article
-      :article="article"
-      :onArticleClick="''"
-      :commentsIsOpen="''"
-      :onCommentsButtonClick="''"
-      :isMainPage="isMainPage"
-    />
-    <router-view />
+    <router-view :news="news" :onArticleClick="''"/>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
-import Article from "./components/Artical.vue";
 
 export default {
   name: "app",
   data() {
     return {
-      article: {
-        id: 1,
-        title: "Article 1",
-        text: "Article text",
-        url: "Article url",
-        score: 5,
-        by: "Me",
-        time: 112263,
-        kids: [],
-      },
-      isMainPage: true,
+      news: [
+        {
+          id: 1,
+          title: "Article 1",
+          text: "Article text",
+          url: "Article url",
+          score: 5,
+          by: "Me",
+          time: 112263,
+          kids: [],
+        },
+        {
+          id: 2,
+          title: "Article 2",
+          text: "Article text",
+          url: "Article url",
+          score: 10,
+          by: "Me",
+          time: 112264,
+          kids: [],
+        },
+        {
+          id: 3,
+          title: "Article 3",
+          text: "Article text",
+          url: "Article url",
+          score: 1,
+          by: "Me",
+          time: 112265,
+          kids: [],
+        },
+      ],
     };
   },
   components: {
     Header,
-    Article,
   },
 };
 </script>
